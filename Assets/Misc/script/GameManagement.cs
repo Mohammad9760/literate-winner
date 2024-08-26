@@ -82,11 +82,13 @@ public class GameManagement : MonoBehaviour
     
     #region minimap
     public GameObject GameCamera, MapCamera;
+    public static int minimapOpenedCounter = 0;
 
     private void ToggleMiniMap()
     {
         GameCamera.SetActive(!GameCamera.activeInHierarchy);
         MapCamera.SetActive(!MapCamera.activeInHierarchy);
+        minimapOpenedCounter = minimapOpenedCounter + (MapCamera.activeInHierarchy? 1: 0);
     }
     #endregion
 
@@ -115,16 +117,29 @@ public class GameManagement : MonoBehaviour
     #endregion
 
 
+    #region win/lose
     public void Win()
     {
         print("you fucking won bitch!");
     }
 
+    public GameObject[] DeathQuestions;
 
+    public void OnPlayerDied(int deathCount = 0)
+    {
+        DeathQuestions[deathCount].SetActive(true);
+    }
+
+    public void SubmitAnswer(TMP_Text text)
+    {
+        var answer = text.text;
+        selectedPlayer.Reborn();
+    }
+    #endregion
     private void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
-            ToggleWorlds();
+        // if(Input.GetButtonDown("Cancel"))
+        //     ToggleWorlds();
 
         if(Input.GetKeyDown(KeyCode.Tab))
             ToggleMiniMap();
@@ -132,4 +147,5 @@ public class GameManagement : MonoBehaviour
         timerUI.text = Timer;
         pickupUI.text = pickup;
     }
+   
 }

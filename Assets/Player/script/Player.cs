@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
     }
 
 
-    public byte HP = 3;
+    public int deathCounter = 0;
+    public byte HP = 8;
 
     public Slider HP_UI;
 
@@ -52,7 +53,16 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        diePos = transform.position;
+        // diePos = transform.position;
+        Time.timeScale = 0;
+        GameManagement.instance.OnPlayerDied(deathCounter);
+        deathCounter++;
+    }
+
+    public void Reborn()
+    {
+        Time.timeScale = 1;
+        HP = 8;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
