@@ -251,6 +251,7 @@ Transform:
   - {fileID: 4936851338911860959}
   - {fileID: 8439233368302249343}
   - {fileID: 7684923134241436402}
+  - {fileID: 3027377373355449201}
   m_Father: {fileID: 3100007366771655128}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -314,10 +315,46 @@ MonoBehaviour:
   HPbar: {fileID: 1595057526447415480}
   LightLook: {fileID: 7371631191099823889}
   DarkLook: {fileID: 203801829733506299}
+  darkBullet: {fileID: 4719388747779855042, guid: 1c87b5e2d469f25488b8fb1b9366c8a7, type: 3}
+  lightBullet: {fileID: 822302906407447993, guid: 82a72e8195e536f4cb0e9d2c0bb6b2c9, type: 3}
+  launchPoint: {fileID: 3027377373355449201}
+  attackDistance: 40
+  fireDelay: 0.4
   waypoints:
   - {fileID: 2797996274219672500}
   - {fileID: 439471169351552220}
   speed: 5.5
+--- !u!1 &2520060801516162037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3027377373355449201}
+  m_Layer: 0
+  m_Name: Shooting Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3027377373355449201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520060801516162037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5553144521213682349}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2797996274219672500
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,7 +70,7 @@ public class GameManagement : MonoBehaviour
 
     public void SelectTeamLight() => CurrentTeam = Team.TeamLight;
 
-    private Player selectedPlayer
+    public Player selectedPlayer
     {
         get
         {

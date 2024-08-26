@@ -55,6 +55,13 @@ public class Enemy : MonoBehaviour
                 GameManagement.instance.OnKilledEnemies(i - 1);
         }
     }
+    [SerializeField] private GameObject darkBullet, lightBullet;
+    private GameObject bullet => GameManagement.instance.CurrentTeam == GameManagement.Team.TeamLight? darkBullet: lightBullet;
+    [SerializeField] private Transform launchPoint;
+    [SerializeField] private float attackDistance = 10;
+    private float fireTimeout;
+    public float fireDelay;
+    private bool canShoot => (fireTimeout <= 0) && Vector2.Distance(GameManagement.instance.selectedPlayer.transform.position, transform.position) <= attackDistance;
 
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
@@ -72,6 +79,17 @@ public class Enemy : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime*speed);
+
+        #region shooting
+
+        if (canShoot)
+        {
+            Instantiate(bullet, launchPoint.position, transform.rotation);
+            fireTimeout = fireDelay;
+        }
+        fireTimeout -= Time.deltaTime;
+
+        #endregion
 
     }
     private void Flip()
