@@ -54,7 +54,7 @@ public class PlayerProfileManager : MonoBehaviour
 
     public bool profileExists()
     {
-        File.Delete(filePath);
+        // File.Delete(filePath);
         return File.Exists(filePath);
     }
     public void OnCreateProfile()
