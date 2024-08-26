@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public float fireDelay;
 
     private Vector2 diePos;
-    
+
 
     public float timePlayed = 0.0f;
 
@@ -80,6 +80,10 @@ public class Player : MonoBehaviour
         {
             HP--;
             controller.EnemyImpact = collision.gameObject.transform.position;
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            HP--;
         }
 
         if (HP == 0) Die();

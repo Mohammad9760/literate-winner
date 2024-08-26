@@ -13,6 +13,7 @@ public class GameManagement : MonoBehaviour
     public GameObject LightWorld, DarkWorld;
     public GameObject LightPlayer, DarkPlayer;
     public GameObject[] LightStuff, DarkStuff;
+    public GameObject Enemies;
 
     public CinemachineVirtualCamera vCam;
 
@@ -51,6 +52,7 @@ public class GameManagement : MonoBehaviour
                 vCam.Follow = LightPlayer.transform;
             }
             currentTeam = value;
+            Enemies.SetActive(true);
         }
         get { return currentTeam; }
     }
