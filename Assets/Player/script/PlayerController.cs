@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     public bool fallThrough;
 
+    public Vector2 EnemyImpact;
+
     private enum State { idle, running, takeof, jumping, falling}
     
     private void Start()
@@ -48,9 +50,18 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
 
+     
+
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         
+        if (EnemyImpact != Vector2.zero)
+        {
+            moveInput += ((EnemyImpact - rb.position).normalized * 500).x;
+            rb.velocity += Vector2.up * jumpForce;
+            EnemyImpact = Vector2.zero;
+            print(rb.velocity);
+        }
 
         if (facingRight == false && moveInput > 0)
         {

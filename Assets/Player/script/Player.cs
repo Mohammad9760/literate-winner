@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+
+    private PlayerController controller;
+
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform launchPoint;
 
@@ -12,9 +15,15 @@ public class Player : MonoBehaviour
     public float fireDelay;
 
     private Vector2 diePos;
-
+    
 
     public float timePlayed = 0.0f;
+
+
+    private void Start()
+    {
+        controller = GetComponent<PlayerController>();
+    }
 
     void Update()
     {
@@ -70,6 +79,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             HP--;
+            controller.EnemyImpact = collision.gameObject.transform.position;
         }
 
         if (HP == 0) Die();

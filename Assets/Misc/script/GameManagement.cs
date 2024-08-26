@@ -118,10 +118,26 @@ public class GameManagement : MonoBehaviour
 
 
     #region win/lose
-    public void Win()
+
+
+    public GameObject gameoverScreen;
+    public TMP_Text Status, PlayTime, Score, DeathCount, MapCount, KillCount;
+
+    private void GameOverScreen(bool win)
     {
-        print("you fucking won bitch!");
+        gameoverScreen.SetActive(true);
+        Time.timeScale = 0;
+        Status.text = win? "برد" : "باخت";
+        PlayTime.text = Timer;
+        Score.text = pickup;
+        DeathCount.text = selectedPlayer.deathCounter.ToString();
+        MapCount.text = minimapOpenedCounter.ToString();
+        // KillCount = 
     }
+
+    public void Win() => GameOverScreen(true);
+
+    public void lose() => GameOverScreen(false);
 
     public GameObject[] DeathQuestions;
 
@@ -133,8 +149,10 @@ public class GameManagement : MonoBehaviour
     public void SubmitAnswer(TMP_Text text)
     {
         var answer = text.text;
-        selectedPlayer.Reborn();
     }
+
+    public void Respawn() => selectedPlayer.Reborn();
+
     #endregion
     private void Update()
     {
