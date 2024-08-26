@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             moveInput += ((EnemyImpact - rb.position).normalized * 500).x;
             rb.velocity += Vector2.up * jumpForce;
             EnemyImpact = Vector2.zero;
-            print(rb.velocity);
         }
 
         if (facingRight == false && moveInput > 0)

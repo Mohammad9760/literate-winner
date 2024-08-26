@@ -132,7 +132,7 @@ public class GameManagement : MonoBehaviour
         Score.text = pickup;
         DeathCount.text = selectedPlayer.deathCounter.ToString();
         MapCount.text = minimapOpenedCounter.ToString();
-        // KillCount = 
+        KillCount.text = Enemy.killed.ToString();
     }
 
     public void Win() => GameOverScreen(true);

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Pickup
   - Exit
+  - Bullet
   layers:
   - Default
   - TransparentFX
