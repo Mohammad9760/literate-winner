@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5765008717313252604}
   - component: {fileID: 1412881350}
   - component: {fileID: 907169001317291342}
-  - component: {fileID: 4462485795728322268}
+  - component: {fileID: -2321122185095341090}
+  - component: {fileID: 59006372542767750}
   m_Layer: 0
   m_Name: Bullet(Light)
   m_TagString: Untagged
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1546933287
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64e2352ba433170499646dab71d2f704, type: 3}
   m_Color: {r: 0.8679245, g: 0.3591386, b: 0.15884651, a: 0.44705883}
@@ -97,13 +98,32 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.020751953, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5350342
---- !u!114 &4462485795728322268
+  m_Radius: 2
+--- !u!114 &-2321122185095341090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,17 +132,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 822302906407447993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ddb2b6b3ec20d43b1e831808fb9cc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 45adc9020fc1006e8b456048857cab6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  lifeTime: 0.8
+  speed: 25
+  lifeTime: 3
   destroyEffect: {fileID: 5471642665220380109, guid: 6a826fffd86b15d4cbf30d12cc6a0292, type: 3}
+--- !u!50 &59006372542767750
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822302906407447993}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2210439407360868438
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5765008717313252604}
     m_Modifications:
     - target: {fileID: 7949877784674451946, guid: da106643f8dc81d4695f422ee863eece, type: 3}
@@ -173,7 +221,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 7949877785472381073, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877785472381073, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1546933287
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877785989063927, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877785989063927, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1546933287
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877786482733104, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877786482733104, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949877786482733104, guid: da106643f8dc81d4695f422ee863eece, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1546933287
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da106643f8dc81d4695f422ee863eece, type: 3}
 --- !u!4 &8142135754400678332 stripped
 Transform:

@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private float fireTimeout;
     public float fireDelay;
 
+    private Vector2 diePos;
+
 
     public float timePlayed = 0.0f;
 
@@ -49,7 +51,9 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {}
+    {
+        diePos = transform.position;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {        
