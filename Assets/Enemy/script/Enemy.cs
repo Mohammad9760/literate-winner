@@ -45,5 +45,16 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         killed++;
+        AskQuestions();
+    }
+
+    private void AskQuestions()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            print("did you kill " + i * 5 + " enemies? " + (killed == i * 5));
+            if (killed == i * 5)
+                GameManagement.instance.OnKilledEnemies(i - 1);
+        }
     }
 }

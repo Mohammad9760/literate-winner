@@ -146,6 +146,14 @@ public class GameManagement : MonoBehaviour
         DeathQuestions[deathCount].SetActive(true);
     }
 
+    public GameObject[] KillingQuestions;
+
+    public void OnKilledEnemies(int i)
+    {
+        KillingQuestions[i].SetActive(true);
+        PauseTime();
+    }
+
     public void SubmitAnswer(TMP_Text text)
     {
         var answer = text.text;
@@ -154,6 +162,12 @@ public class GameManagement : MonoBehaviour
     public void Respawn() => selectedPlayer.Reborn();
 
     #endregion
+
+
+    public void PauseTime() => Time.timeScale = 0;
+
+    public void ResumeTime() => Time.timeScale = 1;
+
     private void Update()
     {
         // if(Input.GetButtonDown("Cancel"))
