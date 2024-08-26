@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
 
     private Rigidbody2D rb;
-    private Animator anim;
+    public Animator anim;
 
     private bool facingRight = true;
 
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         extraJumps = extraJumpValue;
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        // anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

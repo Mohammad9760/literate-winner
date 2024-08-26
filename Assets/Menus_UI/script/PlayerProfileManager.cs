@@ -29,30 +29,6 @@ public class PlayerProfileManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        // var firstQuestion = new Question();
-        // firstQuestion.QuestionText = "متاسفم همه جون هات رو از دست دادی...";
-        // firstQuestion.Answers[0] = "خیلی بد بازی کردم، همش تقصیر خودم بود";
-        // firstQuestion.Answers[1] = "من همه تلاشمو کردم، ولی بازی سخت تر از چیزی بود که فکرش رو میکردم";
-        // firstQuestion.Reply = "(یک فرصت دیگه داری تا دوباره به دنیا برگردی و بازی روادامه بدی...";
-        // DeathQuestions[0] = firstQuestion;
-        // var secQuestion = new Question();
-        // secQuestion.QuestionText = "(متاسفم دوباره جون هات رو از دست دادی..";
-        // secQuestion.Answers[0] = "حس میکنم خیلی ضعیفم، هیچوقت نمیتونم موفق بشم";
-        // secQuestion.Answers[1] = "کاش یک فرصت دیگه هم میتونستم داشته باشم، میدونم که میتونستم بهتر بازی کنم";
-        // secQuestion.Reply = "باز هم یک فرصت دیگه داری تا دوباره به دنیا برگردی و بازی روادامه بدی..";
-        // DeathQuestions[1] = secQuestion;
-        // var thirdQuestion = new Question();
-        // thirdQuestion.QuestionText = "متاسفم دوباره جون هات رو از دست دادی و شکست خوردی..";
-        // thirdQuestion.Answers[0] = "دیگه هیچ امیدی ندارم به اینکه بتونم بهتر بازی کنم، من شکست خوردم";
-        // thirdQuestion.Answers[1] = "کاش میتونستم برای آخرین بار همه تلاشمو بکنم، میدونم که میتونم برنده بشم";
-        // thirdQuestion.Reply = "باز هم یک فرصت دیگه داری تا دوباره به دنیا برگردی و بازی روادامه بدی، اما حواست جمع باشه این دیگه آخرین فرصته..";
-        // DeathQuestions[2] = thirdQuestion;
-        // var forthQuestion = new Question();
-        // forthQuestion.QuestionText = "(متاسفم شما شکست خوردید، بازی تمام شد..";
-        // forthQuestion.Answers[0] = "میدونستم اینطور میشه، من همیشه یه بازندم";
-        // forthQuestion.Answers[1] = "اشکالی نداره، به هر حال از بازی کردن لذت بردم";
-        // forthQuestion.Reply = "تمام";
-        // DeathQuestions[3] = forthQuestion;
     }
 
     void Start()
@@ -78,7 +54,7 @@ public class PlayerProfileManager : MonoBehaviour
 
     public bool profileExists()
     {
-        // File.Delete(filePath);
+        File.Delete(filePath);
         return File.Exists(filePath);
     }
     public void OnCreateProfile()

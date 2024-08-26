@@ -35,8 +35,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         count++;
-        LightLook.SetActive(GameManagement.instance.CurrentTeam == GameManagement.Team.TeamLight);
-        DarkLook.SetActive(GameManagement.instance.CurrentTeam == GameManagement.Team.TeamDark);
+        LightLook.SetActive(GameManagement.instance.CurrentTeam == GameManagement.Team.TeamDark);
+        DarkLook.SetActive(GameManagement.instance.CurrentTeam == GameManagement.Team.TeamLight);
     }
 
 
