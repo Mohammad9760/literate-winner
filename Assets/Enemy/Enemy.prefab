@@ -126,8 +126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.2, y: 4.2}
-  m_SizeDelta: {x: 783, y: 428}
+  m_AnchoredPosition: {x: -0.4803, y: 3.9533}
+  m_SizeDelta: {x: 5.692, y: 4.766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &147131511347387614
 Canvas:
@@ -744,7 +744,7 @@ MonoBehaviour:
   lightBullet: {fileID: 822302906407447993, guid: 82a72e8195e536f4cb0e9d2c0bb6b2c9, type: 3}
   launchPoint: {fileID: 3027377373355449201}
   attackDistance: 40
-  fireDelay: 0.4
+  fireDelay: 0.7
   waypoints:
   - {fileID: 2797996274219672500}
   - {fileID: 439471169351552220}
@@ -1025,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2520060801516162037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.69, y: 0, z: 0}
+  m_LocalPosition: {x: 3.52, y: 0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2706,7 +2706,7 @@ Transform:
   - {fileID: 7700133303902404497}
   - {fileID: 6455726252572763943}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7257481963607624939
 GameObject:
